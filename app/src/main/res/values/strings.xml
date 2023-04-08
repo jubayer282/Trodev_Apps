@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Trodev</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="start">Open</string>
+    <string name="close">Close</string>
+    <string name="details_text"><b>Trodev It\'s a IT Company</b>\nToday\'s world is moving with the touch of modernity, different technologies have touched that touch. With this technology, the whole world seems to be in the palm of your hand. At present people and rhythms are mixing with this modern world. Just as a person is modern and sees everything around him, so a person is using his latest technology to carry on his activities. In the same way, we have this organization to help people use technology in the right way. Through our organization we provide various necessary apps, software and websites. So that a person can run the activities of his life in a beautiful way. Our company gives you apps, software, and websites for your business.</string>
+    <string name="main_branch"><b>Main-Branch:</b> House-n: 34, Road: Maizudding Ahemed Road, Dattapara, house-building, Tongi, Gazipur</string>
+    <string name="sub_branch"><b>Sub-Branch:</b> House-no:02, Road-no:27, Rupnagar Abashik, Mirpur-02, Dhaka</string>
+    <string name="ceo_details"><b>Md. Zobayer Hasan Nayem (Founder and CEO)</b></string>
+    <string name="mobile_number"><b>Contact Number:</b>+8801615257555, +8801925671797 (Office)</string>
+
+</resources>
