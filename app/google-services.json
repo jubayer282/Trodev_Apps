@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "273843009038",
+    "project_id": "trodev-app",
+    "storage_bucket": "trodev-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273843009038:android:9467d7ded6abf1eff1ae5f",
+        "android_client_info": {
+          "package_name": "com.trodev.trodev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273843009038-9tlrts3jtthu63nmnqls0c8rg7c1euqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trodev.trodev",
+            "certificate_hash": "8d1016c6362bffee31705cec487888642de4d798"
+          }
+        },
+        {
+          "client_id": "273843009038-tef5450p0d18nj5nq52fag35csbuvo1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ2J3aslQtoU_Lt881JgzW_5D8BbUp4qE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273843009038-tef5450p0d18nj5nq52fag35csbuvo1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

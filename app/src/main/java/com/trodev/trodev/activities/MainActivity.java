@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         switch (item.getItemId()) {
             case R.id.nav_contact:
                 Toast.makeText(this, "Contact us", Toast.LENGTH_SHORT).show();
@@ -120,8 +119,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Client List", Toast.LENGTH_SHORT).show();
                 break;
 
+            case R.id.nav_tube:
+                Toast.makeText(this, "Trodev Tube", Toast.LENGTH_SHORT).show();
+                Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.youtube.com/@trodev"));
+                try {
+                    startActivity(webIntent);
+                } catch (ActivityNotFoundException ex) {
+                    startActivity(webIntent);
+                }
+                break;
+
             case R.id.nav_policy:
                 Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
                 break;
             case R.id.nav_share:
                 try {

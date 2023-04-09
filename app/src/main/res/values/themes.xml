@@ -33,6 +33,10 @@
 <item name="android:fontFamily">@font/sf_ns_text</item>
 </style>
 
+    <!-- ProgressBar. -->
+    <style name="ProgressBar">
+        <item name="colorSecondary">@color/black</item>
+    </style>
 
 
 </resources>

@@ -12,6 +12,11 @@
         android:title="Client List" />
 
     <item
+        android:id="@+id/nav_tube"
+        android:icon="@drawable/nav_youtube"
+        android:title="Trodev Tube" />
+
+    <item
         android:id="@+id/nav_policy"
         android:icon="@drawable/ic_privacy"
         android:title="Privacy Policy" />
