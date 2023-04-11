@@ -362,7 +362,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/sf_ns_text"
-                android:text="all right reserved 2022 Trodev"
+                android:text="all right reserved 2023 Trodev"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 

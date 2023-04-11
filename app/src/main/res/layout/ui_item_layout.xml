@@ -153,6 +153,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Design Demo Link"
+                        android:autoLink="web"
                         android:textColor="#F44336"
                         android:textIsSelectable="true" />
 

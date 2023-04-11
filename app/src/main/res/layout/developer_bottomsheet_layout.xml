@@ -34,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/trebuc"
-                        android:text="Convertix"
+                        android:text="Trodev"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="23sp" />
@@ -44,8 +44,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/nav_person" />
-
+                        android:src="@drawable/background_image" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -69,6 +68,16 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/trebuc"
+                        android:text="👩‍💻Sub-Developer:\n              Md. Jubayer Hossain \n              Software Quality Assurance\n              Engineer of Trodev \n"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -77,6 +86,20 @@
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/trebuc"
+                        android:gravity="left"
+                        android:autoLink="web"
+                        android:text="🌐 https://zobayerdev.github.io/trodev/"
+                        android:textColor="@color/black"
+                        android:textIsSelectable="true"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
 
@@ -88,6 +111,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/trebuc"
                         android:gravity="left"
+                        android:autoLink="email"
                         android:text="📧 zobayer.dev@gmail.com"
                         android:textColor="@color/black"
                         android:textIsSelectable="true"
@@ -115,7 +139,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/trebuc"
-                        android:text="© copyright 2022 all reserved by Trodev."
+                        android:text="© copyright 2023 all reserved by Trodev."
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15sp"

@@ -143,7 +143,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Play Store Url"
+                        android:text="Play Store Url: "
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -153,6 +153,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Play Store Link"
+                        android:autoLink="web"
                         android:textColor="#F44336"
                         android:textIsSelectable="true" />
 
