@@ -1,106 +1,98 @@
 package com.trodev.trodev.activities;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.trodev.trodev.R;
-import com.trodev.trodev.adapters.ApplicationAdapter;
-import com.trodev.trodev.models.ApplicationData;
+import com.trodev.trodev.models.SoftwareData;
+import com.trodev.trodev.adapters.SoftwareAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplicationListActivity extends AppCompatActivity {
+public class SoftwareListActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
-    private RecyclerView NarsariDept;
-
-    private List<ApplicationData> list1;
-
-    private ApplicationAdapter adapter;
+    private RecyclerView software;
+    private List<SoftwareData> list1;
+    private SoftwareAdapter adapter;
     private DatabaseReference reference, dbRef;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_application_list);
+        setContentView(R.layout.activity_software_list);
 
         // action bar title
-        getSupportActionBar().setTitle("All Application");
+        getSupportActionBar().setTitle("All Software");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        // progress Dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait for sometimes.....");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
 
-        // Recyceler view finding korlam
-        NarsariDept = findViewById(R.id.NarsariDept);
-
-
+        // Recycler view  init
+        software = findViewById(R.id.software);
         reference = FirebaseDatabase.getInstance().getReference().child("Trodev"); // databse ta check korte hobe always
-
-        NarsariDept();
+        SoftwareDepartment();
 
     }
 
     // ############################################################################################
-    // ############################### Narsari Department #########################################
+    // ############################### Software Department #########################################
     // ############################################################################################
-    private void NarsariDept() {
+    private void SoftwareDepartment() {
 
         progressDialog.setMessage("Data Fetching");
         progressDialog.show();
 
-        dbRef = reference.child("Application");
+        dbRef = reference.child("Software");
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list1 = new ArrayList<>();
-                if(!dataSnapshot.exists())
-                {
+                if (!dataSnapshot.exists()) {
+
                     progressDialog.show();
-                    NarsariDept.setVisibility(View.GONE); // change
-                }
-                else
-                {
+                    software.setVisibility(View.GONE); // change
+                } else {
+
                     progressDialog.hide();
-                    NarsariDept.setVisibility(View.VISIBLE);
-                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                        ApplicationData data = snapshot.getValue(ApplicationData.class); // eikhane sob student hobe teacher thakle
+                    software.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        SoftwareData data = snapshot.getValue(SoftwareData.class); // eikhane sob student hobe teacher thakle
                         list1.add(data);
 
-                        Toast.makeText(ApplicationListActivity.this, "All Applications are here...!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SoftwareListActivity.this, "All Software's are here...!", Toast.LENGTH_SHORT).show();
                     }
-
                     progressDialog.hide();
-                    NarsariDept.setHasFixedSize(true);
-                    NarsariDept.setLayoutManager(new LinearLayoutManager(ApplicationListActivity.this));
-                    adapter = new ApplicationAdapter(list1,ApplicationListActivity.this,"Application");
-                    NarsariDept.setAdapter(adapter);
+                    software.setHasFixedSize(true);
+                    software.setLayoutManager(new LinearLayoutManager(SoftwareListActivity.this));
+                    adapter = new SoftwareAdapter(list1, SoftwareListActivity.this, "Software");
+                    software.setAdapter(adapter);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ApplicationListActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(SoftwareListActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

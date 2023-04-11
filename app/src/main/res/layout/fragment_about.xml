@@ -345,6 +345,17 @@
                 android:textIsSelectable="true"
                 android:textSize="15sp" />
 
+
+            <ImageView
+                android:id="@+id/map"
+                android:layout_width="wrap_content"
+                android:layout_height="230dp"
+                android:src="@drawable/trodev_map"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
