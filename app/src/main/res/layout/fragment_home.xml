@@ -26,7 +26,6 @@
                 android:layout_gravity="center"
                 android:src="@drawable/background_image" />
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,8 +35,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,7 +81,8 @@
                                 android:padding="2dp"
                                 android:text="Apps Development"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/text_size1" />
+                                android:textSize="@dimen/text_size1"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -101,7 +100,8 @@
                                 android:padding="2dp"
                                 android:text="Software Development"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/text_size1" />
+                                android:textSize="@dimen/text_size1"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -119,7 +119,8 @@
                                 android:padding="2dp"
                                 android:text="Web Development"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/text_size1" />
+                                android:textSize="@dimen/text_size1"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -136,7 +137,8 @@
                                 android:padding="2dp"
                                 android:text="Graphics Design"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/text_size1" />
+                                android:textSize="@dimen/text_size1"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -153,10 +155,10 @@
                                 android:padding="2dp"
                                 android:text="UI/UX Design"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/text_size1" />
+                                android:textSize="@dimen/text_size1"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
-
 
                     </com.google.android.material.card.MaterialCardView>
 
@@ -197,10 +199,10 @@
                             android:weightSum="2">
 
                             <ImageView
-                                android:layout_width="40dp"
+                                android:layout_width="30dp"
                                 android:layout_height="40dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/nav_aboutus" />
+                                android:src="@drawable/google_play" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -208,10 +210,11 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/sf_ns_text"
-                                android:text="Application"
+                                android:text=" Application"
                                 android:textAllCaps="false"
                                 android:textColor="@color/black"
-                                android:textSize="15sp" />
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </com.google.android.material.card.MaterialCardView>
@@ -245,7 +248,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/nav_aboutus" />
+                                android:src="@drawable/software" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -253,10 +256,11 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/sf_ns_text"
-                                android:text="Software"
+                                android:text=" Software"
                                 android:textAllCaps="false"
                                 android:textColor="@color/black"
-                                android:textSize="15sp" />
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </com.google.android.material.card.MaterialCardView>
@@ -300,7 +304,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/nav_aboutus" />
+                                android:src="@drawable/ic_graphics" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -311,7 +315,8 @@
                                 android:text="Graphics Design"
                                 android:textAllCaps="false"
                                 android:textColor="@color/black"
-                                android:textSize="15sp" />
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </com.google.android.material.card.MaterialCardView>
@@ -345,7 +350,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/nav_aboutus" />
+                                android:src="@drawable/ui" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -353,10 +358,11 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/sf_ns_text"
-                                android:text="UI/UX Design"
+                                android:text=" UI/UX Design"
                                 android:textAllCaps="false"
                                 android:textColor="@color/black"
-                                android:textSize="15sp" />
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </com.google.android.material.card.MaterialCardView>

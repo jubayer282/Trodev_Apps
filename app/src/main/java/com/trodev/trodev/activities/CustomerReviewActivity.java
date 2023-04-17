@@ -23,13 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerReviewActivity extends AppCompatActivity {
-
     private ProgressDialog progressDialog;
     private RecyclerView customerRv;
     private List<CustomerData> list1;
     private CustomerAdapter adapter;
     private DatabaseReference reference, dbRef;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +42,9 @@ public class CustomerReviewActivity extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
-        // Recyceler view finding korlam
+        // Recycler view finding
         customerRv = findViewById(R.id.customerRv);
-        reference = FirebaseDatabase.getInstance().getReference().child("Review"); // databse ta check korte hobe always
+        reference = FirebaseDatabase.getInstance().getReference().child("Review"); // database check always
         customerReview();
     }
     // ############################################################################################

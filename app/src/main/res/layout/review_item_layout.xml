@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--Id change hoise eikhane-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/studentImage"
             android:layout_width="100dp"

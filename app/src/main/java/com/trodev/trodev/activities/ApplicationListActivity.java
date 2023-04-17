@@ -25,12 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ApplicationListActivity extends AppCompatActivity {
-
     private ProgressDialog progressDialog;
-    private RecyclerView NarsariDept;
-
+    private RecyclerView applicationRv;
     private List<ApplicationData> list1;
-
     private ApplicationAdapter adapter;
     private DatabaseReference reference, dbRef;
 
@@ -49,21 +46,18 @@ public class ApplicationListActivity extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
+        // Recycler view finding
+        applicationRv = findViewById(R.id.applicationRv);
 
-        // Recyceler view finding korlam
-        NarsariDept = findViewById(R.id.NarsariDept);
+        reference = FirebaseDatabase.getInstance().getReference().child("Trodev");
 
-
-        reference = FirebaseDatabase.getInstance().getReference().child("Trodev"); // databse ta check korte hobe always
-
-        NarsariDept();
-
+        Application();
     }
 
     // ############################################################################################
-    // ############################### Narsari Department #########################################
+    // ############################### Application Department ######################################
     // ############################################################################################
-    private void NarsariDept() {
+    private void Application() {
 
         progressDialog.setMessage("Data Fetching");
         progressDialog.show();
@@ -73,34 +67,30 @@ public class ApplicationListActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list1 = new ArrayList<>();
-                if(!dataSnapshot.exists())
-                {
+                if (!dataSnapshot.exists()) {
                     progressDialog.show();
-                    NarsariDept.setVisibility(View.GONE); // change
-                }
-                else
-                {
+                    applicationRv.setVisibility(View.GONE); // change
+                } else {
                     progressDialog.hide();
-                    NarsariDept.setVisibility(View.VISIBLE);
-                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                        ApplicationData data = snapshot.getValue(ApplicationData.class); // eikhane sob student hobe teacher thakle
+                    applicationRv.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        ApplicationData data = snapshot.getValue(ApplicationData.class);
                         list1.add(data);
 
                         Toast.makeText(ApplicationListActivity.this, "All Applications are here...!", Toast.LENGTH_SHORT).show();
                     }
 
                     progressDialog.hide();
-                    NarsariDept.setHasFixedSize(true);
-                    NarsariDept.setLayoutManager(new LinearLayoutManager(ApplicationListActivity.this));
-                    adapter = new ApplicationAdapter(list1,ApplicationListActivity.this,"Application");
-                    NarsariDept.setAdapter(adapter);
+                    applicationRv.setHasFixedSize(true);
+                    applicationRv.setLayoutManager(new LinearLayoutManager(ApplicationListActivity.this));
+                    adapter = new ApplicationAdapter(list1, ApplicationListActivity.this, "Application");
+                    applicationRv.setAdapter(adapter);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ApplicationListActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
     }

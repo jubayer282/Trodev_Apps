@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.CustomerReviewActivity">
 
-    <!--eikhane ID change hoise-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/customerRv"
         android:layout_width="match_parent"

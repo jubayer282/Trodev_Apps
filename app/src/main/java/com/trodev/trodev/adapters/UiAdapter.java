@@ -1,6 +1,8 @@
 package com.trodev.trodev.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Picasso;
 import com.trodev.trodev.R;
 import com.trodev.trodev.models.GraphicsData;
@@ -48,8 +51,15 @@ public class UiAdapter extends RecyclerView.Adapter<UiAdapter.UiViewAdapter> {
         holder.development.setText(item.getDevelopment());
         holder.types.setText(item.getType());
         holder.description.setText(item.getDescription());
-        holder.url.setText(item.getUrl());
 
+        holder.uiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // button click and go to play store
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(item.getUrl())));
+                context.startActivity(webIntent);
+            }
+        });
 
         try {
             Picasso.get().load(item.getImage()).into(holder.image);
@@ -64,10 +74,9 @@ public class UiAdapter extends RecyclerView.Adapter<UiAdapter.UiViewAdapter> {
     }
 
     public class UiViewAdapter extends RecyclerView.ViewHolder {
-        private TextView name, development, types, description, url;
+        private TextView name, development, types, description;
         private ImageView image;
-        private Button update;
-
+        private MaterialCardView uiBtn;
         public UiViewAdapter(@NonNull View itemView) {
             super(itemView);
             //init all software xml layout views
@@ -75,9 +84,12 @@ public class UiAdapter extends RecyclerView.Adapter<UiAdapter.UiViewAdapter> {
             development = itemView.findViewById(R.id.developmentTv);
             types = itemView.findViewById(R.id.typesTv);
             description = itemView.findViewById(R.id.descriptionTv);
-            url = itemView.findViewById(R.id.urlTv);
+
             // apps image
-            image = itemView.findViewById(R.id.studentImage);
+            image = itemView.findViewById(R.id.uiIv);
+
+            //init material card view
+            uiBtn = itemView.findViewById(R.id.uiBtn);
         }
     }
 }

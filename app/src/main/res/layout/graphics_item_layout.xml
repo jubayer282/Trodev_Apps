@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp">
@@ -19,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:layout_weight="0.5"
-            android:src="@drawable/ic_person" />
+            android:src="@drawable/ic_graphics" />
 
         <LinearLayout
 
@@ -38,6 +39,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
 
@@ -55,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Design Name"
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -63,6 +66,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -79,6 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Development Tools "
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -87,6 +92,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -102,6 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:fontFamily="@font/trebuc"
                         android:text="Design Types"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -112,6 +119,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -129,35 +137,34 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="5dp"
                         android:text="Description"
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
-                <LinearLayout
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/graphicsBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/google_play"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp"
+                    tools:ignore="InvalidId">
 
-                    <TextView
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Design Demo: "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/ic_graphics" />
 
-                    <TextView
-                        android:id="@+id/urlTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="Design Demo Link"
-                        android:autoLink="web"
-                        android:textColor="#F44336"
-                        android:textIsSelectable="true" />
+                </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

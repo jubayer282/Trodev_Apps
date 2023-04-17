@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp">
@@ -19,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:layout_weight="0.5"
-            android:src="@drawable/ic_person" />
+            android:src="@drawable/software" />
 
         <LinearLayout
 
@@ -38,6 +39,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
 
@@ -55,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Software Name"
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -63,6 +66,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -79,6 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Development Tools "
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -87,6 +92,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -103,6 +109,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Apps Types"
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -112,6 +119,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -129,35 +137,33 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="5dp"
                         android:text="Description"
+                        android:fontFamily="@font/trebuc"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
-                <LinearLayout
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/softBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/google_play"
+                    android:text="Play store"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp"
+                    tools:ignore="InvalidId">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Software Demo: "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/software" />
 
-                    <TextView
-                        android:id="@+id/urlTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="Software Demo Link"
-                        android:autoLink="web"
-                        android:textColor="#F44336"
-                        android:textIsSelectable="true" />
-
-                </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -1,31 +1,32 @@
 package com.trodev.trodev.adapters;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Picasso;
 import com.trodev.trodev.models.ApplicationData;
 import com.trodev.trodev.R;
 
 import java.util.List;
 
-public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.StudentViewAdapter> {
-
-    // eikhnae amra list declear korbo kon seikhaner list er Data ta check korte hobe
+public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.ApplicationViewAdapter> {
     private List<ApplicationData> list;
     private Context context;
     private String category;
 
-
-    // ApplicationData eikhane dekhte hobe change ache kina eikhane na thakle change kore nite hobe
     public ApplicationAdapter(List<ApplicationData> list, Context context, String category) {
         this.list = list;
         this.context = context;
@@ -34,17 +35,15 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
 
     @NonNull
     @Override
-    public StudentViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ApplicationViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.application_item_layout, parent, false);
 
-        return new StudentViewAdapter(view);
+        return new ApplicationViewAdapter(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StudentViewAdapter holder, int position) {
-
-        // eikhane amra teacher er ja ja database theke nibo eikhane sob dekhaite hobe amader.
+    public void onBindViewHolder(@NonNull ApplicationViewAdapter holder, int position) {
 
         ApplicationData item = list.get(position);
 
@@ -52,7 +51,16 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         holder.development.setText(item.getDevelopment());
         holder.types.setText(item.getType());
         holder.description.setText(item.getDescription());
-        holder.url.setText(item.getUrl());
+       // holder.url.setText(item.getUrl());
+
+        holder.playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // button click and go to play store
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(item.getUrl())));
+                context.startActivity(webIntent);
+            }
+        });
 
 
         try {
@@ -67,24 +75,25 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         return list.size();
     }
 
-    public class StudentViewAdapter extends RecyclerView.ViewHolder {
-
-        private TextView name, development, types, description, url;
+    public class ApplicationViewAdapter extends RecyclerView.ViewHolder {
+        private TextView name, development, types, description;
         private ImageView image;
-        private Button update;
+        private MaterialCardView playBtn;
 
 
-        public StudentViewAdapter(@NonNull View itemView) {
+        public ApplicationViewAdapter(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.nameTv);
             development = itemView.findViewById(R.id.developmentTv);
             types = itemView.findViewById(R.id.typesTv);
             description = itemView.findViewById(R.id.descriptionTv);
-            url = itemView.findViewById(R.id.urlTv);
 
             // apps image
-            image = itemView.findViewById(R.id.studentImage);
+            image = itemView.findViewById(R.id.appsIv);
+
+            //material card view init
+            playBtn = itemView.findViewById(R.id.playBtn);
         }
     }
 }
