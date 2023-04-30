@@ -9,6 +9,7 @@ It's our company apps. user can see our application and know any apps details, d
   - Contact Admin
   - Trodev Company overview
   - Office location
+  - Home Location 
   
 Any one can use this application.
 
